@@ -1,0 +1,67 @@
+#include<stdio.h>
+#include<graphics.h>
+void Boundaryfill(int x, int y,int fill, int boundary)
+{
+	int current = getpixel(x,y);
+	if((current!=fill)&&(current!=boundary))
+	{
+		putpixel(x,y,fill);
+		Boundaryfill(x+1,y,fill,boundary);
+		Boundaryfill(x-1,y,fill,boundary);
+		Boundaryfill(x,y+1,fill,boundary);	
+		Boundaryfill(x,y-1,fill,boundary);
+	}
+}
+void main()
+{
+	int i =0;
+	int gd = DETECT,gm;
+	initgraph(&gd,&gm,"");
+
+	//left side view
+	line(50,150,50,300);
+	line(50,150,100,75);
+	line(100,75,150,200);
+	line(50,300,150,350);
+	line(150,350,150,200);
+	line(50,260,150,310);
+        line(50,150,150,200);                                          
+	Boundaryfill(60,150,6,15);
+	Boundaryfill(85,195,8,15);
+	//front outline
+	line(50,150,150,200);
+	line(100,75,400,75);
+	line(400,75,450,200);
+	line(450,200,150,200);
+	line(450,200,450,350);
+	line(450,350,150,350);
+	line(150,310,450,310);
+
+	//roof
+	for(i=100;i<400;i=i+25)
+	{
+		line(i,75,50+i,200);		
+	}
+	
+	//left side view rect
+	line(75,185,125,210);
+	line(75,255,125,280);
+	line(75,185,75,255);
+	line(125,210,125,280);
+		
+	//FRONT VIEW RECTANGLE
+	line(175,210,225,210);
+	line(175,210,175,300);
+	line(175,300,225,300);
+	line(225,300,225,210);
+
+	//circle	
+	circle(98,135,20);
+	
+	getch();
+}
+
+
+
+
+
