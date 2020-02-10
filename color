@@ -36,11 +36,12 @@ void main()
 	line(450,200,450,350);
 	line(450,350,150,350);
 	line(150,310,450,310);
-
+	Boundaryfill(125,150,4,15);
 	//roof
 	for(i=100;i<400;i=i+25)
 	{
-		line(i,75,50+i,200);		
+		line(i,75,50+i,200);	
+		Boundaryfill(i+2,77,3,15);
 	}
 	
 	//left side view rect
