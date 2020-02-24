@@ -1,5 +1,20 @@
 #include<stdio.h>
 #include<graphics.h>
+void flood(int x,int y,int old,int new) 
+{ 
+if(getpixel(x,y)==old)
+ 	{
+    putpixel(x,y,new);
+    flood(x+1,y,old,new); 
+    flood(x-1,y,old,new);
+    flood(x,y+1,old,new);
+    flood(x,y-1,old,new);
+    flood(x+1,y+1,old,new);
+    flood(x+1,y-1,old,new);
+    flood(x-1,y+1,old,new);
+    flood(x-1,y-1,old,new); 
+ } 
+}
 void Boundaryfill(int x, int y,int fill, int boundary)
 {
 	int current = getpixel(x,y);
@@ -61,8 +76,3 @@ void main()
 	
 	getch();
 }
-
-
-
-
-
