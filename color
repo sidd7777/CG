@@ -43,6 +43,7 @@ void main()
         line(50,150,150,200);                                          
 	Boundaryfill(60,150,6,15);
 	Boundaryfill(85,195,8,15);
+
 	//front outline
 	line(50,150,150,200);
 	line(100,75,400,75);
@@ -52,6 +53,7 @@ void main()
 	line(450,350,150,350);
 	line(150,310,450,310);
 	Boundaryfill(125,150,4,15);
+
 	//roof
 	for(i=100;i<400;i=i+25)
 	{
@@ -64,15 +66,17 @@ void main()
 	line(75,255,125,280);
 	line(75,185,75,255);
 	line(125,210,125,280);
-		
+	Boundaryfill(135,200,9,15);
+
 	//FRONT VIEW RECTANGLE
 	line(175,210,225,210);
 	line(175,210,175,300);
 	line(175,300,225,300);
 	line(225,300,225,210);
+	Boundaryfill(250,250,10,15);
 
 	//circle	
 	circle(98,135,20);
-	
+	Boundaryfill(100,140,6,15);
 	getch();
 }
